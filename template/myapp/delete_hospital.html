@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- Navigation-->
+{% block content %}
+<p>Are you sure you want to delete this hospital?</p>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <a href="{% url 'hospital_list' %}" class="btn btn-warning">NO</a>
+    <input type="submit" name="Submit" class="btn btn-success" value="YES, Delete">
+</form>
+{% endblock %}

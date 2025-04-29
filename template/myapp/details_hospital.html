@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ hospital.hospital_name }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ hospital.location }}</h6>
+    <p class="card-text">Number of Doctors: {{ hospital.number_of_doctors }}</p>
+    <a href="{% url 'delete' hospital.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'hospital_list' %}" class="btn btn-primary">Back</a>
+    <a href="{% url 'update_hospital' hospital.id %}" class="btn btn-warning">Update</a>
+  </div>
+</div>
+{% endblock %}
